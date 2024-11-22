@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Employee Manager</h2>
+            <ul>
+                <li>Dashboard</li>
+                <li>Settings</li>
+                <li><button onclick="window.location.href='{{ url_for('logout') }}'">Logout</button></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <input type="text" placeholder="Search" id="search">
+                <button id="add-employee">Add Employee</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Room</th>
+                        <th>Salary</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="employeeTable">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal Form for Adding Employee -->
+    <div id="addEmployeeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add employee</h2>
+            <form id="employeeForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="position">Position:</label>
+                <input type="text" id="position" required>
+                <label for="department">Room:</label>
+                <input type="text" id="department">
+                <label for="salary">Salary:</label>
+                <input type="number" id="salary" required>
+                <button type="button" id="saveEmployee">Save</button>
+            </form>
+        </div>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>
